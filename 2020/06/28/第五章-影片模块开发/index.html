@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>第五章-影片模块开发 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="影片模块开发概要 掌握API网关聚合功能的实现 掌握Mybatis-plus自定义SQL实现 掌握Dubbo异步调用  服务聚合 服务聚合就是将多个服务调用封装 服务聚合可以简化前端调用方式 服务聚合提供更好的安全性，可扩展性   表结构 8张表 业务开发流程 接口文档思考功能列表 实现API接口和实体 服务提供者   新建影院模块修改名字和子模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第五章-影片模块开发">
+<meta property="og:url" content="http://yoursite.com/2020/06/28/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="影片模块开发概要 掌握API网关聚合功能的实现 掌握Mybatis-plus自定义SQL实现 掌握Dubbo异步调用  服务聚合 服务聚合就是将多个服务调用封装 服务聚合可以简化前端调用方式 服务聚合提供更好的安全性，可扩展性   表结构 8张表 业务开发流程 接口文档思考功能列表 实现API接口和实体 服务提供者   新建影院模块修改名字和子模块">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/source/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628193046612.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/source/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200627225115958.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91.assets/image-20200628193700857.png">
+<meta property="article:published_time" content="2020-06-28T11:37:57.866Z">
+<meta property="article:modified_time" content="2020-06-28T11:39:25.233Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/source/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628193046612.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,130 +158,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-第五章-影片模块开发" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      第五章-影片模块开发
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/28/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/" class="archive-article-date">
+
+        
+        <a href="/2020/06/28/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/" class="archive-article-date">
   	<time datetime="2020-06-28T11:37:57.866Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/28/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/">第五章-影片模块开发</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<hr>
+<h1 id="影片模块开发"><a href="#影片模块开发" class="headerlink" title="影片模块开发"></a>影片模块开发</h1><h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><ul>
+<li>掌握API网关聚合功能的实现</li>
+<li>掌握Mybatis-plus自定义SQL实现</li>
+<li>掌握Dubbo异步调用</li>
+</ul>
+<h2 id="服务聚合"><a href="#服务聚合" class="headerlink" title="服务聚合"></a>服务聚合</h2><ul>
+<li>服务聚合就是将多个服务调用封装</li>
+<li>服务聚合可以简化前端调用方式</li>
+<li>服务聚合提供更好的安全性，可扩展性</li>
+</ul>
+<p><img src="/../../../../source/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628193046612.png" alt="image-20200628193046612"></p>
+<h2 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h2><p><img src="../../source/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200627225115958.png" alt="image-20200627225115958"></p>
+<p>8张表</p>
+<h2 id="业务开发流程"><a href="#业务开发流程" class="headerlink" title="业务开发流程"></a>业务开发流程</h2><ul>
+<li>接口文档思考功能列表</li>
+<li>实现API接口和实体</li>
+<li>服务提供者</li>
+</ul>
+<ol>
+<li>新建影院模块<br>修改名字和子模块</li>
+</ol>
+<p><img src="%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91.assets/image-20200628193700857.png" alt="image-20200628193700857"></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/28/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/27/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2020-06-27T14:26:44.504Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/27/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第四章-用户模块开发</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/27/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/">第四章-用户模块开发</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/27/article/" class="archive-article-date">
-  	<time datetime="2020-06-26T18:19:57.420Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/27/article/">article</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/24/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-24T03:47:14.166Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/24/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -296,8 +353,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
