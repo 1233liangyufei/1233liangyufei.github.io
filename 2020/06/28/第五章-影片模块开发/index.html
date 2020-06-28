@@ -8,18 +8,28 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>第五章-影片模块开发 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="影片模块开发概要 掌握API网关聚合功能的实现 掌握Mybatis-plus自定义SQL实现 掌握Dubbo异步调用  服务聚合 服务聚合就是将多个服务调用封装 服务聚合可以简化前端调用方式 服务聚合提供更好的安全性，可扩展性   表结构 8张表 业务开发流程 接口文档思考功能列表 实现API接口和实体 服务提供者   新建影院模块修改名字和子模块">
+  <meta name="description" content="影片模块开发概要 掌握API网关聚合功能的实现 掌握Mybatis-plus自定义SQL实现 掌握Dubbo异步调用  服务聚合 服务聚合就是将多个服务调用封装 服务聚合可以简化前端调用方式 服务聚合提供更好的安全性，可扩展性   表结构 8张表 业务开发流程 接口文档思考功能列表 实现API接口和实体 服务提供者   新建影院模块修改名字和子模块    ))))))))">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第五章-影片模块开发">
 <meta property="og:url" content="http://yoursite.com/2020/06/28/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="影片模块开发概要 掌握API网关聚合功能的实现 掌握Mybatis-plus自定义SQL实现 掌握Dubbo异步调用  服务聚合 服务聚合就是将多个服务调用封装 服务聚合可以简化前端调用方式 服务聚合提供更好的安全性，可扩展性   表结构 8张表 业务开发流程 接口文档思考功能列表 实现API接口和实体 服务提供者   新建影院模块修改名字和子模块">
+<meta property="og:description" content="影片模块开发概要 掌握API网关聚合功能的实现 掌握Mybatis-plus自定义SQL实现 掌握Dubbo异步调用  服务聚合 服务聚合就是将多个服务调用封装 服务聚合可以简化前端调用方式 服务聚合提供更好的安全性，可扩展性   表结构 8张表 业务开发流程 接口文档思考功能列表 实现API接口和实体 服务提供者   新建影院模块修改名字和子模块    ))))))))">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/source/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628193046612.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/source/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200627225115958.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/28/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91.assets/image-20200628193700857.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201330004.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201354631.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201355004.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201355438.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201355650.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201355829.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201356027.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201356183.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201356364.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201356528.png">
 <meta property="article:published_time" content="2020-06-28T11:37:57.866Z">
-<meta property="article:modified_time" content="2020-06-28T11:39:25.233Z">
+<meta property="article:modified_time" content="2020-06-28T12:13:58.467Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/source/images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628193046612.png">
@@ -202,6 +212,8 @@
 <li>新建影院模块<br>修改名字和子模块</li>
 </ol>
 <p><img src="%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91.assets/image-20200628193700857.png" alt="image-20200628193700857"></p>
+<p><img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201330004.png" alt="image-20200628201330004"></p>
+<p><img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201354631.png" alt="image-20200628201354631">)<img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201355004.png" alt="image-20200628201355004">)<img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201355438.png" alt="image-20200628201355438">)<img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201355650.png" alt="image-20200628201355650">)<img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201355829.png" alt="image-20200628201355829">)<img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201356027.png" alt="image-20200628201356027">)<img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201356183.png" alt="image-20200628201356183">)<img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201356364.png" alt="image-20200628201356364">)<img src="../images/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BD%B1%E7%89%87%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/image-20200628201356528.png" alt="image-20200628201356528"></p>
 
       
 
